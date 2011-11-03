@@ -1,3 +1,9 @@
+# revision 15878
+# category Package
+# catalog-ctan /fonts/doublestroke
+# catalog-date 2009-11-19 15:03:53 +0100
+# catalog-license other-free
+# catalog-version 1.111
 Name:		texlive-doublestroke
 Version:	1.111
 Release:	1
@@ -68,6 +74,7 @@ provided. The fonts appear in the blackboard bold sampler.
 %doc %{_texmfdistdir}/doc/fonts/doublestroke/README
 %doc %{_texmfdistdir}/doc/fonts/doublestroke/dsdoc.pdf
 %doc %{_texmfdistdir}/doc/fonts/doublestroke/dsdoc.tex
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -78,3 +85,5 @@ provided. The fonts appear in the blackboard bold sampler.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}

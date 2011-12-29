@@ -17,8 +17,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
 
 %description
 A font based on Computer Modern Roman useful for typesetting
@@ -29,20 +27,12 @@ numbers (C); coverage includes all Roman capital letters, '1',
 in Adobe Type 1 format, and LaTeX macros for its use are
 provided. The fonts appear in the blackboard bold sampler.
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -75,7 +65,6 @@ provided. The fonts appear in the blackboard bold sampler.
 %doc %{_texmfdistdir}/doc/fonts/doublestroke/README
 %doc %{_texmfdistdir}/doc/fonts/doublestroke/dsdoc.pdf
 %doc %{_texmfdistdir}/doc/fonts/doublestroke/dsdoc.tex
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -86,5 +75,3 @@ provided. The fonts appear in the blackboard bold sampler.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}

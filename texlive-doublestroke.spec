@@ -6,7 +6,7 @@
 # catalog-version 1.111
 Name:		texlive-doublestroke
 Version:	1.111
-Release:	9
+Release:	10
 Summary:	Typeset mathematical double stroke symbols
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/doublestroke

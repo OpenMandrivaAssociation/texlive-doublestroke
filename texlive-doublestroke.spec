@@ -1,18 +1,12 @@
-# revision 15878
-# category Package
-# catalog-ctan /fonts/doublestroke
-# catalog-date 2009-11-19 15:03:53 +0100
-# catalog-license other-free
-# catalog-version 1.111
 Name:		texlive-doublestroke
-Version:	1.111
-Release:	11
+Version:	15878
+Release:	1
 Summary:	Typeset mathematical double stroke symbols
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/doublestroke
 License:	OTHER-FREE
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/doublestroke.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/doublestroke.doc.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/doublestroke.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/doublestroke.doc.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -28,12 +22,12 @@ in Adobe Type 1 format, and LaTeX macros for its use are
 provided. The fonts appear in the blackboard bold sampler.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -68,24 +62,10 @@ provided. The fonts appear in the blackboard bold sampler.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%autosetup -p1 -c -a1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts tex doc %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.111-2
-+ Revision: 751068
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 1.111-1
-+ Revision: 718252
-- texlive-doublestroke
-- texlive-doublestroke
-- texlive-doublestroke
-- texlive-doublestroke
-

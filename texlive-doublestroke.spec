@@ -1,6 +1,6 @@
 Name:		texlive-doublestroke
 Version:	15878
-Release:	1
+Release:	2
 Summary:	Typeset mathematical double stroke symbols
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/doublestroke

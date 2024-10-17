@@ -3,7 +3,7 @@ Version:	15878
 Release:	2
 Summary:	Typeset mathematical double stroke symbols
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/fonts/doublestroke
+URL:		https://www.ctan.org/tex-archive/fonts/doublestroke
 License:	OTHER-FREE
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/doublestroke.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/doublestroke.doc.r%{version}.tar.xz
